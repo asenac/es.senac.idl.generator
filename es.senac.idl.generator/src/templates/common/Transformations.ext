@@ -1,0 +1,25 @@
+import org::csu::idl::idlmm;
+
+private Void include2TranslationUnitImpl(TranslationUnit this) :  JAVA org.csu.idl.xtext.transformation.Include2TranslationUnit.convertInclude2TranslationUnit(org.csu.idl.idlmm.TranslationUnit);
+
+Void include2TranslationUnit(List this) :
+	typeSelect(TranslationUnit).include2TranslationUnitImpl()
+;
+
+private Void evaluateExpressionsImpl(TranslationUnit this) :  JAVA org.csu.idl.xtext.transformation.ExpressionEvaluator.evaluate(org.csu.idl.idlmm.TranslationUnit);
+
+Void evaluateExpressions(List this) :
+	typeSelect(TranslationUnit).evaluateExpressionsImpl()
+;
+
+private Void expandArrayDefsImpl(TranslationUnit this) :  JAVA org.csu.idl.xtext.transformation.ArrayExpander.expand(org.csu.idl.idlmm.TranslationUnit);
+
+Void expandArrayDefs(List this) :
+	typeSelect(TranslationUnit).expandArrayDefsImpl()
+;
+
+private Void allTransformationsImpl(TranslationUnit this) :  JAVA org.csu.idl.xtext.transformation.AllTransformations.apply(org.csu.idl.idlmm.TranslationUnit);
+
+Void allTransformations(List this) :
+	typeSelect(TranslationUnit).allTransformationsImpl()
+;

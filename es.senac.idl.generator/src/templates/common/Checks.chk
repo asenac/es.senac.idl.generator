@@ -1,0 +1,5 @@
+import org::csu::idl::idlmm;
+
+context Container ERROR
+	"Two 'Contained' types with the same identifier" :
+	contains.forAll(c1| contains.notExists(c2| c1 != c2 && c1.identifier == c2.identifier ));

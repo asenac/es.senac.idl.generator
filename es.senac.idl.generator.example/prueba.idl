@@ -1,0 +1,11 @@
+module mod
+{
+    struct S
+    {
+        long a;
+    };
+
+    interface A
+    {
+    };
+};

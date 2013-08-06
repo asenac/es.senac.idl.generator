@@ -1,0 +1,67 @@
+«IMPORT org::csu::idl::idlmm»
+
+«EXTENSION templates::common::Common»
+
+«DEFINE main FOR TranslationUnit»
+«FILE getFileName() + ".h"-»
+«LET getFileName().toUpperCase() + "_H" AS headerSymbol-»
+#ifndef «headerSymbol»
+#define «headerSymbol»
+
+	«EXPAND declaration FOREACH contains-»
+
+#endif	// «headerSymbol»
+«ENDLET»
+«ENDFILE»
+«FILE getFileName() + ".cpp"-»
+#include "«getFileName()».h"
+
+	«EXPAND implementation FOREACH contains-»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE declaration FOR Contained-»«ENDDEFINE»
+«DEFINE implementation FOR Contained-»«ENDDEFINE»
+
+«DEFINE declaration FOR ModuleDef-»
+namespace «identifier»
+{
+
+	«EXPAND declaration FOREACH contains-»
+
+} // namespace «identifier»
+«ENDDEFINE»
+
+«DEFINE implementation FOR ModuleDef-»
+	«EXPAND implementation FOREACH contains-»
+«ENDDEFINE»
+
+«DEFINE declaration FOR InterfaceDef-»
+class «identifier»
+{
+public:
+	«identifier»();
+	~«identifier»();
+	
+	«EXPAND declaration FOREACH contains-»
+};
+«ENDDEFINE»
+
+«DEFINE implementation FOR InterfaceDef-»
+«identifier»::«identifier»()
+{
+}
+
+«identifier»::~«identifier»()
+{
+}
+«ENDDEFINE»
+
+«DEFINE declaration FOR StructDef-»
+struct «identifier»
+{
+	«FOREACH members AS m-»
+	int «m.identifier»;
+	«ENDFOREACH-»
+};
+«ENDDEFINE»

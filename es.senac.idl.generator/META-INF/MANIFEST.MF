@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: es.senac.idl.generator
+Bundle-Vendor: Andres Senac 
+Bundle-Version: 1.0.0
+Bundle-SymbolicName: es.senac.idl.generator;singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.csu.idl.xtext;visibility:=reexport,
+ org.csu.idl.idlmm;visibility:=reexport,
+ org.eclipse.xpand;visibility:=reexport,
+ org.eclipse.xtend;visibility:=reexport,
+ org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.emf.mwe.utils;visibility:=reexport,
+ org.eclipse.xtend.typesystem.emf;visibility:=reexport,
+ org.eclipse.core.resources;bundle-version="3.5.2"
+Import-Package: org.apache.commons.logging,
+ org.apache.log4j
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ClassPath: lib/gnu.getopt.jar
+ .
+Export-Package: es.senac.idl.generator
